@@ -50,6 +50,7 @@ see `docs/prd/marijuana-awareness-site.md` for the full problem/goal/approach.
 | ADW-006 | Rename campaign to "The Full Picture" | done |
 | ADW-007 | Localize site into Hindi and Kannada | done |
 | ADW-008 | Native-speaker review of Hindi/Kannada translations | ready (blocked-on-human) |
+| ADW-009 | Deploy the site to GitHub Pages | done |
 
 ## Notes / decisions
 

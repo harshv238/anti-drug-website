@@ -12,7 +12,7 @@ Format: `**PREFIX-NNN** · <title> · \`model\` · <note>`
 <!-- One line per epic: id · title · progress · status. An epic groups several
      tickets under one outcome (see `<PREFIX>-E*` files). Child tickets carry
      `epic: <epic-id>` in their frontmatter. -->
-**ADW-E01** · Marijuana/Weed Awareness Website for Bangalore · 6/8 done · in-progress
+**ADW-E01** · Marijuana/Weed Awareness Website for Bangalore · 7/9 done · in-progress
 
 ---
 
@@ -40,3 +40,4 @@ Format: `**PREFIX-NNN** · <title> · \`model\` · <note>`
 **ADW-005** · Visual redesign + persuasive Why Stop page · `sonnet` · 2026-07-20
 **ADW-006** · Rename campaign to "The Full Picture" · `sonnet` · 2026-07-21
 **ADW-007** · Localize site into Hindi and Kannada · `sonnet` · 2026-07-21
+**ADW-009** · Deploy to GitHub Pages · `sonnet` · 2026-07-21

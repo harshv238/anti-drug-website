@@ -33,12 +33,29 @@ Format:
   translation review — same launch-gate pattern as ADW-003).
 
 **Next:**
-- ADW-003 (helpline/legal verification) and ADW-008 (translation review) both gate public
-  launch now.
-- Everything is staged in git but not committed yet this round.
-- Still open: where to deploy (owner asked; likely answered inline this session — see chat).
+- ADW-003 (helpline/legal verification) and ADW-008 (translation review) both gate
+  *promoting* the site publicly.
 
 **Open questions:** None new beyond the two human launch-gate tickets.
+
+## 2026-07-21 — Deployed to GitHub Pages (ADW-009)
+
+**Did:**
+- Owner asked where to deploy; recommended GitHub Pages (repo already existed locally).
+  Owner confirmed — created GitHub repo `harshv238/anti-drug-website` (public), pushed
+  `main`.
+- Since `site/` isn't the repo root and `docs/` is already used for the project framework
+  (so the classic "/docs" Pages source would've deployed the wrong thing), set up a GitHub
+  Actions workflow (`.github/workflows/pages.yml`) to publish `site/` specifically, and
+  enabled Pages with build source "GitHub Actions" via `gh api`.
+- Confirmed the deploy workflow ran successfully and the live site responds correctly,
+  including the Hindi/Kannada subfolders.
+
+**Next:**
+- Site is live at https://harshv238.github.io/anti-drug-website/ but ADW-003 and ADW-008
+  still gate actively promoting/sharing it.
+
+**Open questions:** None new.
 
 ## 2026-07-21 — Renamed campaign to "The Full Picture" (ADW-006)
 
