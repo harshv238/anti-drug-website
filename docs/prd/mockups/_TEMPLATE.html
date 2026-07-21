@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- Replace with your feature name and ticket/epic reference -->
+<title>Feature Name — mockup (CPF-NNN)</title>
+<!--
+  Mockup: <Feature Name>
+  Ticket / Epic: CPF-NNN / CPF-E00
+  Author: <persona or human>
+  Date: YYYY-MM-DD
+  Status: draft | approved
+
+  Self-contained, dependency-free HTML mockup-as-spec.
+  No external resources. Open as file:// with no network access.
+  See docs/prd/mockups/README.md for the convention.
+-->
+<style>
+  /* ── Design tokens ──────────────────────────────────────────────────────────
+     Keep all palette, spacing, and type decisions here as CSS variables.
+     The developer maps these to the real app's tokens.
+     Change a token here = change everywhere in this mockup.
+  */
+  :root {
+    /* Palette — Atlassian/Jira production tokens (match serve_dashboard.py) */
+    --bg:       #f7f8fa;
+    --surface:  #ffffff;
+    --rail:     #1d2125;
+    --rail-line:#2c333a;
+    --rail-text:#b6c2cf;
+    --line:     #dfe1e6;
+    --text:     #172b4d;
+    --text-dim: #44546f;
+    --accent:   #0c66e4;
+
+    /* Status lozenge tokens */
+    --loz-backlog-bg:    #dcdfe4; --loz-backlog-fg:    #44546f;
+    --loz-ready-bg:      #cce0ff; --loz-ready-fg:      #0055cc;
+    --loz-progress-bg:   #fedec8; --loz-progress-fg:   #974f0c;
+    --loz-review-bg:     #f8e6a0; --loz-review-fg:     #7f5f01;
+    --loz-blocked-bg:    #ffd5d2; --loz-blocked-fg:    #ae2a19;
+    --loz-done-bg:       #dcfff1; --loz-done-fg:       #216e4e;
+
+    /* Shape */
+    --radius:   6px;
+    --shadow:   0 1px 1px rgba(9,30,66,.16);
+    --shadow-pop: 0 8px 24px rgba(9,30,66,.20);
+
+    /* Type scale */
+    --font: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    --text-xs:  11px;
+    --text-sm:  13px;
+    --text-base:14px;
+    --text-md:  16px;
+    --text-lg:  20px;
+  }
+
+  /* ── Reset ──────────────────────────────────────────────────────────────── */
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body { height: 100%; }
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font: var(--text-base)/1.5 var(--font);
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* ── Mockup chrome ──────────────────────────────────────────────────────── */
+  /* The outer wrapper just centres the mockup and adds a page title. */
+  .mockup-page {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 32px 24px 64px;
+  }
+  .mockup-header {
+    border-bottom: 2px solid var(--line);
+    padding-bottom: 16px;
+    margin-bottom: 32px;
+  }
+  .mockup-header h1 {
+    font-size: var(--text-lg);
+    font-weight: 700;
+    color: var(--text);
+  }
+  .mockup-header p {
+    font-size: var(--text-sm);
+    color: var(--text-dim);
+    margin-top: 4px;
+  }
+  .mockup-section {
+    margin-bottom: 48px;
+  }
+  .mockup-section-title {
+    font-size: var(--text-sm);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: .06em;
+    color: var(--text-dim);
+    margin-bottom: 16px;
+  }
+
+  /* ── Annotation / callout system ────────────────────────────────────────── */
+  /*
+    Usage:
+      <div class="note-wrap">
+        <!-- your component markup here -->
+        <span class="note-badge" data-note="1">1</span>
+      </div>
+      ...
+      <div class="note-legend">
+        <div class="note-item"><span class="note-badge">1</span> Explanation of note 1.</div>
+        <div class="note-item"><span class="note-badge">2</span> Explanation of note 2.</div>
+      </div>
+  */
+  .note-wrap { position: relative; }
+  .note-badge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: var(--accent);
+    color: #fff;
+    font-size: var(--text-xs);
+    font-weight: 700;
+    line-height: 1;
+    position: absolute;
+    top: -8px;
+    right: -8px;
+    cursor: default;
+    z-index: 10;
+  }
+  .note-legend {
+    background: #fffbe6;
+    border: 1px solid #f0c;
+    border-color: #e8c200;
+    border-radius: var(--radius);
+    padding: 16px 20px;
+    margin-top: 16px;
+  }
+  .note-legend-title {
+    font-size: var(--text-xs);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: .06em;
+    color: var(--text-dim);
+    margin-bottom: 10px;
+  }
+  .note-item {
+    display: flex;
+    gap: 10px;
+    align-items: flex-start;
+    margin-bottom: 8px;
+    font-size: var(--text-sm);
+    color: var(--text);
+  }
+  .note-item .note-badge { position: static; flex: none; }
+  .note-item:last-child { margin-bottom: 0; }
+
+  /* ── Component examples ─────────────────────────────────────────────────── */
+  /* Card */
+  .card {
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    padding: 14px 16px;
+    box-shadow: var(--shadow);
+  }
+
+  /* Status lozenge */
+  .loz {
+    display: inline-block;
+    padding: 2px 8px;
+    border-radius: 3px;
+    font-size: var(--text-xs);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: .04em;
+    line-height: 1.6;
+  }
+  .loz.backlog  { background: var(--loz-backlog-bg);  color: var(--loz-backlog-fg);  }
+  .loz.ready    { background: var(--loz-ready-bg);    color: var(--loz-ready-fg);    }
+  .loz.progress { background: var(--loz-progress-bg); color: var(--loz-progress-fg); }
+  .loz.review   { background: var(--loz-review-bg);   color: var(--loz-review-fg);   }
+  .loz.blocked  { background: var(--loz-blocked-bg);  color: var(--loz-blocked-fg);  }
+  .loz.done     { background: var(--loz-done-bg);     color: var(--loz-done-fg);     }
+
+  /* Button */
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 6px 14px;
+    border-radius: var(--radius);
+    font-size: var(--text-sm);
+    font-weight: 500;
+    cursor: pointer;
+    border: 1px solid transparent;
+  }
+  .btn-primary { background: var(--accent); color: #fff; }
+  .btn-secondary { background: var(--surface); border-color: var(--line); color: var(--text); }
+</style>
+</head>
+<body>
+
+<div class="mockup-page">
+
+  <div class="mockup-header">
+    <h1>Feature Name — visual spec</h1>
+    <p>Mockup for CPF-NNN / CPF-E00 &middot; Status: draft &middot; YYYY-MM-DD</p>
+  </div>
+
+  <!-- ── Section 1: <State or variant name> ──────────────────────────────── -->
+  <div class="mockup-section">
+    <div class="mockup-section-title">State 1 — <label></div>
+
+    <div class="note-wrap card" style="padding: 24px;">
+      <!--
+        Replace this placeholder with the actual component or screen markup.
+        Keep markup semantic and close to what will ship — the developer builds
+        from this structure directly.
+      -->
+      <p style="color:var(--text-dim);font-size:var(--text-sm);">
+        Replace this placeholder with the component or layout you are specifying.
+      </p>
+
+      <div style="margin-top:16px;display:flex;gap:8px;align-items:center;">
+        <span class="loz backlog">backlog</span>
+        <span class="loz ready">ready</span>
+        <span class="loz progress">in-progress</span>
+        <span class="loz review">review</span>
+        <span class="loz blocked">blocked</span>
+        <span class="loz done">done</span>
+      </div>
+
+      <!-- Annotation badges: position:absolute relative to .note-wrap -->
+      <span class="note-badge" style="top:8px;right:8px;">1</span>
+      <span class="note-badge" style="top:48px;right:8px;">2</span>
+    </div>
+
+    <div class="note-legend" style="margin-top:12px;">
+      <div class="note-legend-title">Annotations</div>
+      <div class="note-item">
+        <span class="note-badge">1</span>
+        <span>Replace with a real annotation. Explain intent and constraints, not what the eye can see.
+        Example: "Tab order must follow visual DOM order. Do not reorder for layout."</span>
+      </div>
+      <div class="note-item">
+        <span class="note-badge">2</span>
+        <span>Replace with a real annotation. Example: "Status lozenge color tokens are shared with
+        the rail nav active-state. Change the token here = change both surfaces."</span>
+      </div>
+    </div>
+  </div>
+  <!-- ────────────────────────────────────────────────────────────────────── -->
+
+  <!-- ── Section 2: <Second state or variant, if needed> ─────────────────── -->
+  <div class="mockup-section">
+    <div class="mockup-section-title">State 2 — <label> (optional)</div>
+    <div class="card" style="padding:24px;">
+      <p style="color:var(--text-dim);font-size:var(--text-sm);">
+        Add a second section for an alternate state (empty, error, mobile, etc.)
+        or remove this block if only one state is needed.
+      </p>
+      <div style="margin-top:12px;display:flex;gap:8px;">
+        <button class="btn btn-primary">Primary action</button>
+        <button class="btn btn-secondary">Secondary</button>
+      </div>
+    </div>
+  </div>
+  <!-- ────────────────────────────────────────────────────────────────────── -->
+
+</div><!-- /.mockup-page -->
+
+<!--
+  No external scripts. Add minimal inline JS only when it directly serves
+  annotation interactivity (e.g. tab-switching to show two states of the same
+  component). For static specs, omit the script block entirely.
+-->
+</body>
+</html>
