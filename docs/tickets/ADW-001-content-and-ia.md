@@ -41,7 +41,8 @@ fact-based/non-judgmental tone) so ADW-002 can build directly against it.
 
 ## Notes / decisions
 
-Campaign name chosen: "ClearHead Bangalore".
+Campaign name chosen at the time: "ClearHead Bangalore" — later renamed to "The Full
+Picture" (see ADR-0005).
 
 ## Outcome (filled after work)
 

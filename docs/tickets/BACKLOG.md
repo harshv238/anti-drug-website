@@ -12,7 +12,7 @@ Format: `**PREFIX-NNN** · <title> · \`model\` · <note>`
 <!-- One line per epic: id · title · progress · status. An epic groups several
      tickets under one outcome (see `<PREFIX>-E*` files). Child tickets carry
      `epic: <epic-id>` in their frontmatter. -->
-**ADW-E01** · Marijuana/Weed Awareness Website for Bangalore · 4/5 done · in-progress
+**ADW-E01** · Marijuana/Weed Awareness Website for Bangalore · 6/8 done · in-progress
 
 ---
 
@@ -21,6 +21,7 @@ Format: `**PREFIX-NNN** · <title> · \`model\` · <note>`
 <!-- Tickets that are unambiguous and can be started now, or waiting on a
      human action (purchases, accounts, sign-offs). -->
 **ADW-003** · Verify helpline numbers & legal facts before public launch · `human` · _launch gate for ADW-E01_
+**ADW-008** · Native-speaker review of Hindi/Kannada translations · `human` · _launch gate for ADW-E01_
 
 ## Backlog (queued)
 
@@ -37,3 +38,5 @@ Format: `**PREFIX-NNN** · <title> · \`model\` · <note>`
 **ADW-002** · Build static site (HTML/CSS/JS) · `sonnet` · 2026-07-20
 **ADW-004** · Add campaign visuals (hero graphic, icons, printable posters) · `sonnet` · 2026-07-20
 **ADW-005** · Visual redesign + persuasive Why Stop page · `sonnet` · 2026-07-20
+**ADW-006** · Rename campaign to "The Full Picture" · `sonnet` · 2026-07-21
+**ADW-007** · Localize site into Hindi and Kannada · `sonnet` · 2026-07-21

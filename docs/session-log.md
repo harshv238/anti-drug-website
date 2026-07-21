@@ -12,6 +12,54 @@ Format:
 
 ---
 
+## 2026-07-21 — Localized the site into Hindi and Kannada (ADW-007)
+
+**Did:**
+- Owner asked to localize into English/Hindi/Kannada. Confirmed structure (static
+  subfolders `site/hi/`, `site/kn/` + a nav language switcher, over a JS toggle) and scope
+  (all 8 pages, all 3 languages) before starting.
+- Added `.nav-right`/`.lang-switch` CSS and wired the EN/हिं/ಕನ switcher into all 8 English
+  pages.
+- Delegated the translation build to two parallel subagents (one per language), each given
+  the English source files, a fixed shared-chrome dictionary (nav/footer/disclaimer text)
+  for cross-page consistency, and explicit instructions not to soften safety-critical
+  caveats. Both completed cleanly — 16 new files, structural tag-count parity self-verified
+  by each agent.
+- Verified with local server + Playwright: 0 console/page errors on sampled Hindi/Kannada
+  pages; manually reviewed full-page screenshots (Hindi/Kannada text renders correctly; one
+  Devanagari nuqta glyph showed as a font-fallback box in the sandboxed headless browser
+  only — confirmed via source inspection the underlying text is correct).
+- Logged ADR-0006; filed ADW-007 (done) and ADW-008 (new human ticket: native-speaker
+  translation review — same launch-gate pattern as ADW-003).
+
+**Next:**
+- ADW-003 (helpline/legal verification) and ADW-008 (translation review) both gate public
+  launch now.
+- Everything is staged in git but not committed yet this round.
+- Still open: where to deploy (owner asked; likely answered inline this session — see chat).
+
+**Open questions:** None new beyond the two human launch-gate tickets.
+
+## 2026-07-21 — Renamed campaign to "The Full Picture" (ADW-006)
+
+**Did:**
+- Owner asked for a better name, not tied to Bangalore. Offered options; owner picked "The
+  Full Picture" (already the exact phrase used in the site's own copy).
+- Renamed everywhere: page titles, nav brand ("CH" → "FP"), footer, OG/Twitter meta tags,
+  WhatsApp/mailto share text, poster pseudo-URLs. Updated `README.md` and
+  `docs/00-START-HERE.md`. Logged ADR-0005; annotated (not rewrote) older tickets that
+  recorded the original name.
+- Verified with local server + Playwright: 0 console/page errors after the rename.
+
+**Next:**
+- Owner asked mid-turn about localizing the whole site into English, Hindi, and Kannada —
+  responding with a scoping question before starting (translation quality expectations,
+  URL/switcher structure) since it's a large multi-page effort, not committing to an
+  approach unilaterally.
+- ADW-003 (human helpline/legal verification) still gates public launch.
+
+**Open questions:** Localization approach (see above) — awaiting owner's answer.
+
 ## 2026-07-20 — Visual redesign + persuasive "Why Stop" page (ADW-005)
 
 **Did:**

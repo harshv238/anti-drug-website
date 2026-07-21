@@ -4,6 +4,32 @@ Lightweight ADRs. **Newest on top.** Format: `date · decision · why`.
 
 ---
 
+## ADR-0006 · 2026-07-21 — Localize via static subfolders (`site/hi/`, `site/kn/`), not a JS toggle
+
+- **Decision:** When the owner asked to localize the site into Hindi and Kannada, offered
+  two structural approaches and let the owner choose: static per-language subfolders
+  mirroring the English page set (chosen) vs. a single-page JS-driven language toggle. Also
+  confirmed scope: full parity across all 8 pages in all 3 languages, not a partial
+  core-pages-first pass. Translation work was delegated to two parallel subagents (one per
+  language) with a fixed shared dictionary for nav/footer/disclaimer text to keep those
+  consistent across each language's 8 pages.
+- **Why:** The subfolder approach matches the site's existing zero-build, zero-JS-framework
+  architecture (ADR-0002) — no translation-dictionary JS to write or maintain, and each
+  language's pages are independently readable/debuggable as plain HTML. A JS toggle would
+  have tripled the embedded text payload per page and added a runtime dependency for no
+  clear benefit on a static campaign site.
+
+## ADR-0005 · 2026-07-21 — Rename campaign from "ClearHead Bangalore" to "The Full Picture"
+
+- **Decision:** Renamed the site/campaign brand from "ClearHead Bangalore" to "The Full
+  Picture" across all pages (title, nav, footer, meta tags, share links) and the brand mark
+  from "CH" to "FP". The site's audience/content still targets Bangalore (law/help pages,
+  campaign framing); only the brand name changed.
+- **Why:** Owner asked for a better name and explicitly wanted it generic, not tied to a
+  city. "The Full Picture" was already the exact phrase used repeatedly in the site's own
+  copy ("...with the full picture"), so it reinforces existing messaging rather than
+  introducing a new concept.
+
 ## ADR-0004 · 2026-07-20 — Persuasion style: "stakes + aspiration," not hard deterrent
 
 - **Decision:** When the owner asked to make the site "more convincing to stop drugs," the

@@ -35,6 +35,8 @@ see `docs/prd/marijuana-awareness-site.md` for the full problem/goal/approach.
 - [x] All Phase 1 pages exist, cross-link correctly, and render cleanly on mobile + desktop.
 - [ ] Helpline numbers and legal specifics are verified by a human before public launch
       (ADW-003).
+- [ ] Hindi and Kannada translations are reviewed by a native speaker before public launch
+      (ADW-008).
 
 ## Child tickets (rollup)
 
@@ -45,13 +47,17 @@ see `docs/prd/marijuana-awareness-site.md` for the full problem/goal/approach.
 | ADW-003 | Verify helpline numbers & legal facts before launch | ready (blocked-on-human) |
 | ADW-004 | Add campaign visuals (hero graphic, icons, printable posters) | done |
 | ADW-005 | Visual redesign + persuasive Why Stop page | done |
+| ADW-006 | Rename campaign to "The Full Picture" | done |
+| ADW-007 | Localize site into Hindi and Kannada | done |
+| ADW-008 | Native-speaker review of Hindi/Kannada translations | ready (blocked-on-human) |
 
 ## Notes / decisions
 
 - Tone: fact-based, non-judgmental (per project owner's explicit choice over hard-deterrent
   messaging).
-- Campaign name: "ClearHead Bangalore" — chosen by the orchestrator per the owner's
-  delegation of content decisions.
+- Campaign name: originally "ClearHead Bangalore" (chosen by the orchestrator per the
+  owner's delegation of content decisions), renamed to "The Full Picture" on 2026-07-21 —
+  see ADR-0005.
 
 ## Outcome (filled when the epic closes)
 

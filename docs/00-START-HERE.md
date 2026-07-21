@@ -8,7 +8,7 @@ work should read this file first.
 ## What this project is
 
 A public-facing website for anti-drug education and awareness. The current build
-(`site/`) is **ClearHead Bangalore** — a weed/marijuana-only awareness campaign site for
+(`site/`) is **The Full Picture** — a weed/marijuana-only awareness campaign site for
 Bangalore youth. See `docs/prd/marijuana-awareness-site.md` and epic `ADW-E01`.
 
 ---
@@ -36,7 +36,7 @@ Bangalore youth. See `docs/prd/marijuana-awareness-site.md` and epic `ADW-E01`.
 | `personas/README.md` | How the persona system works |
 | `prd/_TEMPLATE.md` | Blank PRD template |
 
-| `prd/marijuana-awareness-site.md` | PRD for the ClearHead Bangalore site (content plan, scope, constraints) |
+| `prd/marijuana-awareness-site.md` | PRD for The Full Picture site (content plan, scope, constraints) |
 | `../site/` | The actual website source (plain HTML/CSS/JS, no build step) |
 
 ---

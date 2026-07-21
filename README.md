@@ -1,4 +1,4 @@
-# ClearHead Bangalore
+# The Full Picture
 
 A fact-based, non-judgmental weed/marijuana awareness website for a Bangalore social
 campaign. Static site, no build step, no external dependencies.
